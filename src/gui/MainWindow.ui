@@ -25,106 +25,28 @@
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
-     <widget class="QSplitter" name="splitter_2">
-      <property name="orientation">
-       <enum>Qt::Horizontal</enum>
-      </property>
-      <property name="childrenCollapsible">
-       <bool>false</bool>
-      </property>
-      <widget class="QToolBox" name="toolBoxSettings">
-       <property name="currentIndex">
-        <number>1</number>
-       </property>
-       <widget class="QWidget" name="pageGeneralSettings">
-        <property name="geometry">
-         <rect>
-          <x>0</x>
-          <y>0</y>
-          <width>188</width>
-          <height>700</height>
-         </rect>
-        </property>
-        <attribute name="label">
-         <string>General</string>
-        </attribute>
-       </widget>
-       <widget class="QWidget" name="pageCUDASettings">
-        <property name="geometry">
-         <rect>
-          <x>0</x>
-          <y>0</y>
-          <width>188</width>
-          <height>700</height>
-         </rect>
-        </property>
-        <attribute name="label">
-         <string>CUDA</string>
-        </attribute>
-       </widget>
-      </widget>
-      <widget class="QSplitter" name="splitter">
-       <property name="orientation">
-        <enum>Qt::Vertical</enum>
-       </property>
-       <property name="childrenCollapsible">
-        <bool>false</bool>
-       </property>
-       <widget class="OGLWidget" name="GLWidget" native="true">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="minimumSize">
-         <size>
-          <width>640</width>
-          <height>480</height>
-         </size>
-        </property>
-        <property name="autoFillBackground">
-         <bool>true</bool>
-        </property>
-       </widget>
-       <widget class="QTabWidget" name="tabTextOutput">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Expanding" vsizetype="MinimumExpanding">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="minimumSize">
-         <size>
-          <width>640</width>
-          <height>240</height>
-         </size>
-        </property>
-        <property name="currentIndex">
-         <number>0</number>
-        </property>
-        <widget class="QWidget" name="tabCUDALog">
-         <attribute name="title">
-          <string>CUDA Log</string>
-         </attribute>
-         <layout class="QHBoxLayout" name="horizontalLayout_3">
-          <item>
-           <widget class="QTextEdit" name="txtCUDALog"/>
-          </item>
-         </layout>
+     <widget class="QWidget" name="verticalWidget" native="true">
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="OGLWidget" name="GLWidget" native="true">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>640</width>
+           <height>480</height>
+          </size>
+         </property>
+         <property name="autoFillBackground">
+          <bool>true</bool>
+         </property>
         </widget>
-        <widget class="QWidget" name="tabProgramLog">
-         <attribute name="title">
-          <string>Program Log</string>
-         </attribute>
-         <layout class="QHBoxLayout" name="horizontalLayout">
-          <item>
-           <widget class="QTextEdit" name="txtProgramLog"/>
-          </item>
-         </layout>
-        </widget>
-       </widget>
-      </widget>
+       </item>
+      </layout>
      </widget>
     </item>
    </layout>
@@ -135,7 +57,7 @@
      <x>0</x>
      <y>0</y>
      <width>1122</width>
-     <height>24</height>
+     <height>22</height>
     </rect>
    </property>
   </widget>
