@@ -25,5 +25,4 @@ void OGLWidget::resizeGL(int w, int h) {
 void OGLWidget::paintGL() {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-
 }
