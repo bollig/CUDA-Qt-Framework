@@ -2,17 +2,33 @@
 
 #include "MainWindow.h"
 
+#include <iostream> 
+
+#include "voronoi.h"
+
 // CUDA code
 extern "C" void RunVecAdd(int n, float* v1, float* v2, float* v3);
+
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
 	ui.setupUi(this);
 
+    qout = new QDebugStream(std::cout, ui.txtCUDALog);
+    qerr = new QDebugStream(std::cerr, ui.txtCUDALog);
+
+    std::cout << "TEST SENDING TO WINDOW" << std::endl;
+
 	// additional connections (because I can't figure out how to do this in Qt Designer :P)
 	QObject::connect(ui.actionRun, SIGNAL(triggered()), this, SLOT(runCUDAProgram()));
+
 }
 
+
 void MainWindow::runCUDAProgram() {
+    Voronoi* v = new Voronoi(); 
+    v->main(); 
+
+#if 0
 	ui.txtCUDALog->appendPlainText("Starting CUDA program...");
 	
 	float v1[3] = {1.0, 2.0, 3.0};
@@ -26,4 +42,6 @@ void MainWindow::runCUDAProgram() {
 	ui.txtCUDALog->appendPlainText(QString("v3 = [%1, %2, %3]").arg(v3[0]).arg(v3[1]).arg(v3[2]));
 
 	ui.txtCUDALog->appendPlainText("Done.\n");
+#endif 
 }
+

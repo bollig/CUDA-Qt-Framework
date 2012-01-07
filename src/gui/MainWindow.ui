@@ -103,23 +103,23 @@
         <property name="currentIndex">
          <number>0</number>
         </property>
-        <widget class="QWidget" name="tabProgramLog">
-         <attribute name="title">
-          <string>Program Log</string>
-         </attribute>
-         <layout class="QHBoxLayout" name="horizontalLayout">
-          <item>
-           <widget class="QPlainTextEdit" name="txtProgramLog"/>
-          </item>
-         </layout>
-        </widget>
         <widget class="QWidget" name="tabCUDALog">
          <attribute name="title">
           <string>CUDA Log</string>
          </attribute>
          <layout class="QHBoxLayout" name="horizontalLayout_3">
           <item>
-           <widget class="QPlainTextEdit" name="txtCUDALog"/>
+           <widget class="QTextEdit" name="txtCUDALog"/>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="tabProgramLog">
+         <attribute name="title">
+          <string>Program Log</string>
+         </attribute>
+         <layout class="QHBoxLayout" name="horizontalLayout">
+          <item>
+           <widget class="QTextEdit" name="txtProgramLog"/>
           </item>
          </layout>
         </widget>

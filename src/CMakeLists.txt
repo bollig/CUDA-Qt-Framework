@@ -31,12 +31,13 @@ SET(cuda_qt_framework_UIS
 # List of CUDA files
 SET(cuda_qt_framework_CUDA_SRCS
 	cuda/HelloCuda.cu
+    cuda/discrete_voronoi.cu
 	cuda/MainCuda.cu
 )
 
 # .ui files
 QT4_WRAP_UI(cuda_qt_framework_SRCS_CXX ${cuda_qt_framework_UIS})
-INCLUDE_DIRECTORIES(${CMAKE_CURRENT_BINARY_DIR} gui)
+INCLUDE_DIRECTORIES(${CMAKE_CURRENT_BINARY_DIR} gui cuda)
 
 # for moc
 QT4_WRAP_CPP(cuda_qt_framework_SRCS_CXX ${cuda_qt_framework_MOC_HDRS})

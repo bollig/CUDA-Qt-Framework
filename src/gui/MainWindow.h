@@ -4,6 +4,7 @@
 #define _MAIN_WINDOW_H_
 
 #include "ui_MainWindow.h"
+#include "QDebugStream.h" 
 
 class MainWindow : public QMainWindow {
 	Q_OBJECT
@@ -17,6 +18,9 @@ private slots:
 
 private:
 	Ui::MainWindow ui;
+
+    QDebugStream* qout;
+    QDebugStream* qerr;
 };
 
 #endif
