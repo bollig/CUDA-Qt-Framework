@@ -13,10 +13,7 @@ extern "C" void RunVecAdd(int n, float* v1, float* v2, float* v3);
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
 	ui.setupUi(this);
 
-    qout = new QDebugStream(std::cout, ui.txtCUDALog);
-    qerr = new QDebugStream(std::cerr, ui.txtCUDALog);
-
-    std::cout << "TEST SENDING TO WINDOW" << std::endl;
+    //qout = new QDebugStream(std::cout, ui.txtCUDALog);
 
 	// additional connections (because I can't figure out how to do this in Qt Designer :P)
 	QObject::connect(ui.actionRun, SIGNAL(triggered()), this, SLOT(runCUDAProgram()));

@@ -246,6 +246,7 @@ int main(void)
         {
             jfa(seeds,temp,k,m,n);
             seeds.swap(temp);
+            //std::cout << "Step: " << k << std::endl;
         }
         float time = timer_stop_and_display();  
         std::cout <<"  ( " <<  seeds.size() / (1e3 * time) << " MPixel/s ) " << std::endl;

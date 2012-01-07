@@ -12,12 +12,12 @@
 #include <streambuf>
 #include <string>
 
-#include "qtextedit.h"
+#include "qplaintextedit.h"
 
 class QDebugStream : public std::basic_streambuf<char>
 {
     public:
-    QDebugStream(std::ostream &stream, QTextEdit* text_edit) : m_stream(stream)
+    QDebugStream(std::ostream &stream, QPlainTextEdit* text_edit) : m_stream(stream)
     {
         log_window = text_edit;
         m_old_buf = stream.rdbuf();
@@ -27,7 +27,7 @@ class QDebugStream : public std::basic_streambuf<char>
     {
         // output anything that is left
         if (!m_string.empty())
-            log_window->append(m_string.c_str());
+            log_window->appendPlainText(m_string.c_str());
 
         m_stream.rdbuf(m_old_buf);
     }
@@ -37,7 +37,7 @@ class QDebugStream : public std::basic_streambuf<char>
     {
         if (v == '\n')
         {
-            log_window->append(m_string.c_str());
+            log_window->appendPlainText(m_string.c_str());
             m_string.erase(m_string.begin(), m_string.end());
         }
         else
@@ -57,8 +57,9 @@ class QDebugStream : public std::basic_streambuf<char>
             if (pos != std::string::npos)
             {
                 std::string tmp(m_string.begin(), m_string.begin() + pos);
-                log_window->append(tmp.c_str());
+                log_window->appendPlainText(tmp.c_str());
                 m_string.erase(m_string.begin(), m_string.begin() + pos + 1);
+                //log_window->viewport()->repaint();
             }
         }
 
@@ -69,7 +70,7 @@ class QDebugStream : public std::basic_streambuf<char>
     std::ostream &m_stream;
     std::streambuf *m_old_buf;
     std::string m_string;
-    QTextEdit* log_window;
+    QPlainTextEdit* log_window;
 };
 
 #endif
